@@ -1,0 +1,24 @@
+Equipe X
+Everton Barros de Moraes
+
+
+
+Repositório
+HTTPS https://github.com/EvertonBMoraes/FrontEndIIICheckPointII.git
+SSH git@github.com:EvertonBMoraes/FrontEndIIICheckPointII.git
+
+Comandos
+npm install
+npm run
+Local: http://localhost:3000
+
+Modelo DH
+https://dh-front-end-iii-checkpoint-ii-resolucao.vercel.app/home
+
+Links das APIs
+https://dhodonto.ctdprojetointegrador.com/swagger-ui/index.html
+
+Para logar na aplicação, utilize:
+* Login: dentistaAdmin
+* Senha: admin123
+
