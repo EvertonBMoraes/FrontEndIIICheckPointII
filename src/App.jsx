@@ -8,8 +8,9 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Home />
       {/* perguntar pro prof pq o Outlet nao esta aparecendo */}
+      {/* <Detail /> */}
+      <Home />
       <Outlet />
       <Footer />
     </div>

@@ -19,7 +19,7 @@ const Home = () => {
     console.log("<Home /> executou efeito colateral");
     getDentistas();
     return function unmount() {
-      console.log(console.log("<Character /> desmontou"));
+      console.log(console.log("<Home /> desmontou"));
     }
   }, []);
 
@@ -44,6 +44,7 @@ const Home = () => {
           })
         }
       </div>
+
     </>
   );
 };
