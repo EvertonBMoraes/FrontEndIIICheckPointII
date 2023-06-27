@@ -1,7 +1,7 @@
-Equipe X
+Equipe 5
 Everton Barros de Moraes
-
-
+Ariane França
+Rogerio Silva
 
 Repositório
 HTTPS https://github.com/EvertonBMoraes/FrontEndIIICheckPointII.git
