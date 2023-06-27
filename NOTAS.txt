@@ -1,15 +1,15 @@
-Equipe X
+Equipe 5
 Everton Barros de Moraes
-
-
+Ariane França
+Rogerio Silva
 
 Repositório
 HTTPS https://github.com/EvertonBMoraes/FrontEndIIICheckPointII.git
 SSH git@github.com:EvertonBMoraes/FrontEndIIICheckPointII.git
 
 Comandos
-npm install
-npm run
+npm install (só na primeira vez)
+npm start
 Local: http://localhost:3000
 
 Modelo DH
