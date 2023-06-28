@@ -24,7 +24,7 @@ function App() {
         <Navbar />
         {/* perguntar pro prof pq o Outlet nao esta aparecendo */}
         {/* <Detail /> */}
-        <Home />
+        {/* <Home /> */}
         <Outlet />
         <Footer />
 
