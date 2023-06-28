@@ -61,7 +61,7 @@ const DetailCard = () => {
                   </ul>
                   <div className="text-center">
                     {/* //Na linha seguinte deverá ser feito um teste se a aplicação
-              // está em dark mode e deverá utilizado o css correto */}
+                    // está em dark mode e deverá utilizado o css correto */}
                     <button
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"

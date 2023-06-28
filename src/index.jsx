@@ -10,7 +10,7 @@ import Login from "./Routes/Login";
 import Detail from "./Routes/Detail";
 
 import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //Lembre-se de configurar suas rotas e seu contexto aqui
@@ -19,6 +19,7 @@ root.render(
     <Routes>
       <Route>
         <Route path="/" element={<App />} >
+          <Route path="/" element={<Navigate to={"/home"} />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/detail/:matricula" element={<Detail />} />
@@ -26,9 +27,5 @@ root.render(
       </Route>
     </Routes>
   </BrowserRouter>
-
-  // <Navbar />
-  // <Home />
-  // <Footer />
 
 );
