@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
-
+import useApi from "../Hooks/useApi";
+import { useEffect } from "react";
+//TODO VERIFICAR A QUESTAO DO MAP NO GET
 const Card = ({ nomeDentista, matricula }) => {
+  const { data, error, shouldFetch } = useApi();
 
+  useEffect(() => {
+
+    if (data && !error) {
+
+      /// Guardamos o token JWT no Storage
+      localStorage.setItem("matricula", matricula);
+
+    }
+
+
+  }, [data, error]);
   return (
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
@@ -16,7 +30,14 @@ const Card = ({ nomeDentista, matricula }) => {
         <div className={`card-body ${styles.CardBody}`}>
           {/* Na linha seguinte o link deverá utilizar a matricula, nome e sobrenome do dentista
           que vem da API */}
-          <Link className="linkStyle" to={`/detail/${matricula}`}>
+          <Link
+            className="linkStyle"
+            to={`/detail/${matricula}`}
+            onClick={() => {
+              localStorage.setItem("matricula", matricula);
+            }}
+          //{async () => await shouldFetch(`dentista/?matricula=${matricula}`)}
+          >
             <h5 className={`card-title ${styles.title}`}>{nomeDentista}</h5>
 
           </Link>

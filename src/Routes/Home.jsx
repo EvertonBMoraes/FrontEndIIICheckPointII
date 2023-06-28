@@ -39,7 +39,7 @@ const Home = () => {
                   matricula={dentista.matricula}
                 />
 
-                : <h2>A lista de dentistas está vazia</h2>
+                : <h2>Carregando informações</h2>
             )
           })
         }

@@ -14,7 +14,7 @@ function App() {
 
   const handleChangeTheme = () => {
     console.log("Filho disparou a função que troca o tema");
-    theme == themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
+    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
   };
   return (
     <ThemeContext.Provider value={{ theme, handleChangeTheme }}>
@@ -24,7 +24,7 @@ function App() {
         <Navbar />
         {/* perguntar pro prof pq o Outlet nao esta aparecendo */}
         {/* <Detail /> */}
-        <Home />
+        {/* <Home /> */}
         <Outlet />
         <Footer />
 
