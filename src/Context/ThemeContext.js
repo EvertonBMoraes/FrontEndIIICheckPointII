@@ -9,6 +9,10 @@ const themes = {
         trTheme: "trThemeLight",
         btnTheme: "btnThemeLight",
         navTheme: "navThemeLight",
+        
+        btnThemeIndex: "btn-light",
+        cardTheme: "card",
+        closeButton: "closeButton",
     },
 
     dark: {
@@ -18,6 +22,12 @@ const themes = {
         trTheme: "trThemeDark",
         btnTheme: "btnThemeDark",
         navTheme: "navThemeDark",
+
+        darkTheme: "dark",
+        cardTheme: "cardDark",
+        iconsTheme: "iconsDark",
+        modalTheme: "DarkModal",
+        closeButton: "closeButtonDark",
     }
 }
 

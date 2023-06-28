@@ -15,7 +15,14 @@ function ThemeConsumer({ children }) {
             ${theme.trTheme}
             ${theme.btnTheme}
             ${theme.navTheme}
-            
+
+            ${theme.btnThemeIndex}
+            ${theme.darkTheme}
+            ${theme.cardTheme}
+            ${theme.iconsTheme}
+            ${theme.modalTheme}
+            ${theme.closeButton}
+
             `
         }>
             {children}
