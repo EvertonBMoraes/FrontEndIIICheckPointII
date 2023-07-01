@@ -9,7 +9,11 @@ const themes = {
         trTheme: "trThemeLight",
         btnTheme: "btnThemeLight",
         navTheme: "navThemeLight",
-        
+        icons: "icons",
+        icon: "icon",
+        dhLogo: "dhLogo",
+        stickyTop: "sticky-top",
+
         btnThemeIndex: "btn-light",
         cardTheme: "card",
         closeButton: "closeButton",
@@ -22,6 +26,8 @@ const themes = {
         trTheme: "trThemeDark",
         btnTheme: "btnThemeDark",
         navTheme: "navThemeDark",
+        cardDark: "cardDark",
+        iconsDark: "iconsDark",
 
         darkTheme: "dark",
         cardTheme: "cardDark",

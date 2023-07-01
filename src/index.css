@@ -28,14 +28,14 @@ h1 {
 .row {
   align-items: center;
 }
-
+/* cor */
 a {
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
-
+/* cor */
 a:hover {
   color: rgb(136, 136, 136);
 }
@@ -47,7 +47,7 @@ form {
   width: 300px;
   margin: 0 auto;
 }
-
+/* cor */
 .btn-light {
   background-color: rgb(214, 214, 214);
 }
@@ -59,7 +59,7 @@ form {
   text-align: center;
   margin: 0 auto;
 }
-
+/* cor */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -67,26 +67,27 @@ table {
   display: table;
   border: 1px solid #ccc;
 }
-
+/* cor */
 td,
 th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-
+/* cor */
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-
+/* cor */
 .dark {
   background-color: #12121296;
   color: white;
 }
+/* cor */
 .dark > a {
   color: white;
 }
-
+/* cor */
 .dark h5 {
   color: rgb(90, 90, 90);
 }

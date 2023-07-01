@@ -35,6 +35,7 @@ const Home = () => {
               dentista ?
 
                 <Card
+                  className="cardTheme"
                   nomeDentista={dentista.nome}
                   matricula={dentista.matricula}
                 />

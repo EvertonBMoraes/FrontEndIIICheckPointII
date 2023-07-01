@@ -15,6 +15,9 @@ function ThemeConsumer({ children }) {
             ${theme.trTheme}
             ${theme.btnTheme}
             ${theme.navTheme}
+            ${theme.icons}
+            ${theme.icon}
+            ${theme.dhLogo}
 
             ${theme.btnThemeIndex}
             ${theme.darkTheme}
@@ -22,6 +25,9 @@ function ThemeConsumer({ children }) {
             ${theme.iconsTheme}
             ${theme.modalTheme}
             ${theme.closeButton}
+
+            ${theme.cardDark}
+            ${theme.iconsDark}
 
             `
         }>

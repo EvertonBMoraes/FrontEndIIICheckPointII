@@ -1,10 +1,28 @@
 import styles from "./Navbar.module.css";
-import { useContext } from "react";
-import { ThemeContext } from "../Context/ThemeContext";
+import { useContext, useState, useEffect } from "react";
+import { ThemeContext, themes } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { theme, handleChangeTheme } = useContext(ThemeContext);
+  const { theme, handleChangeTheme, themeIcon } = useContext(ThemeContext);
+  // const [themeIcon, setThemeIcon] = useState("☀")
+
+  // const handleChangeIcon = () => {
+  //   console.log("Filho disparou a função que troca o icone");
+
+  //   if (theme === theme.light) {
+  //     setThemeIcon("☀");
+  //   } else {
+  //     setThemeIcon("🌙");
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   handleChangeIcon();
+  // }, [setThemeIcon]);
+
+
+
   return (
     <header className="sticky-top">
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
@@ -60,15 +78,19 @@ const Navbar = () => {
                 <button
                   className={`btn btn-light${styles.btnStyle}`}
                   onClick={handleChangeTheme}
+
                 >
-                  ☀ 🌙{" "}
+                  {/* ☀ 🌙{" "} */}
+
+                  {themeIcon}
+
                 </button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    </header>
+    </header >
   );
 };
 
