@@ -2,12 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./ScheduleForm.module.css";
 import axios from 'axios';
 import apiBaseUrl from '../api';
+import { useNavigate } from "react-router-dom";
 
 const ScheduleForm = () => {
   //const params = useParams();
 
   // const { data, shouldFetch } = useApi();
-
+  const navigate = useNavigate();
   const [dentistas, setDentistas] = useState([]);
   const [pacientes, setPacientes] = useState([]);
 
@@ -28,10 +29,6 @@ const ScheduleForm = () => {
       ...res.data
     ]);
 
-    // console.log(res.data);
-    // console.log(params.matricula);
-
-    //   await shouldFetch(`dentista/?matricula=${matricula}`);
   }
 
   useEffect(() => {
@@ -39,7 +36,6 @@ const ScheduleForm = () => {
   }, []);
 
   const getPacientes = async () => {
-    //const matriculaDentista = localStorage.getItem("matricula");
     const res = await axios.get(`${apiBaseUrl}/paciente`);
 
     setPacientes([
@@ -60,8 +56,10 @@ const ScheduleForm = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     console.log("clicou no botão de schedule");
-    //futuramente esse token vai vir do localStorage quando o login ficar pronto
-    const token = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBcGkgREggRWNvbW1lcmNlIiwic3ViIjoiZGVudGlzdGFBZG1pbiIsImlhdCI6MTY4Nzk4MjA5MCwiZXhwIjoxNjg3OTg1NjkwfQ.u0hwKJyOnaIuDbNdEmMsgpnLBcx4vTibGNZVQRB8Kto";
+
+    //Token vindo do Login
+    const token = localStorage.getItem("token");
+    console.log(`Token utilizado no schedule consulta: ${token}`)
 
     const config = {
       headers: { Authorization: `Bearer ${token}` }
@@ -83,6 +81,14 @@ const ScheduleForm = () => {
     /// Comunicação com a API
     const response = await axios.post(`${apiBaseUrl}/consulta`, consulta, config);
     console.log(response);
+
+    if (response.status == 200) {
+      alert("Consulta gerada com sucesso")
+      navigate("/home");
+    } else {
+      alert("Ocorreu um erro tente novamente mais tarde")
+      navigate("/home");
+    }
     /// Atualizando as informações da tela, com o novo objeto (produto) cadastrado.
     //getProducts();
   }
@@ -170,6 +176,7 @@ const ScheduleForm = () => {
               className={`btn btn-light ${styles.button
                 }`}
               type="submit"
+              data-bs-dismiss="modal"
             >
               Schedule
             </button>

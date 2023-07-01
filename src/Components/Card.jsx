@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 import useApi from "../Hooks/useApi";
 import { useEffect } from "react";
-//TODO VERIFICAR A QUESTAO DO MAP NO GET
+
 const Card = ({ nomeDentista, matricula }) => {
   const { data, error, shouldFetch } = useApi();
 
