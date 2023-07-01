@@ -1,10 +1,7 @@
 import styles from "./Navbar.module.css";
-import { useContext } from "react";
-import { ThemeContext } from "../Context/ThemeContext";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { theme, handleChangeTheme } = useContext(ThemeContext);
+
   return (
     <header className="sticky-top">
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
@@ -15,9 +12,9 @@ const Navbar = () => {
       >
         <div className="container">
           {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
-          <Link className={`navbar-brand ${styles.navbarBrand}`} to={`/home`}>
+          <a className={`navbar-brand ${styles.navbarBrand}`} href="/home">
             DH Odonto
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -37,9 +34,9 @@ const Navbar = () => {
             <ul className="navbar-nav mb-2 mb-sm-0">
               <li className={`nav-item ${styles.navBarLink}`}>
                 {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
-                <Link className="nav-link" to={`/home`}>
+                <a className="nav-link" href="/home">
                   Home
-                </Link>
+                </a>
               </li>
               <li className={`nav-item ${styles.navBarLink}`}>
                 {/* Se o usuário estiver logado, deverá aparecer um botão de logout
@@ -48,9 +45,9 @@ const Navbar = () => {
                 ao formulário de login
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
-                <Link className="nav-link" to={`/login`}>
+                <a className="nav-link" href="/login">
                   Login
-                </Link>
+                </a>
               </li>
               <li className={`nav-item`}>
                 {/* Ao ser clicado, esse botão mudará a aplicação para dark mode ou light mode.
@@ -58,8 +55,8 @@ const Navbar = () => {
                  Na linha seguinte deverá ser feito um teste se a aplicação
                  está em dark mode e deverá utilizar o icone ☀ ou 🌙 e btn-dark ou btn-light*/}
                 <button
-                  className={`btn btn-light${styles.btnStyle}`}
-                  onClick={handleChangeTheme}
+                  className={`btn btn-light${styles.btnStyle
+                    }`}
                 >
                   ☀ 🌙{" "}
                 </button>

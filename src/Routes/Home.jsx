@@ -1,50 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Card from "../Components/Card";
-import apiBaseUrl from "../api";
-import axios from "axios";
+import useApi from "../Hooks/useApi";
 
 const Home = () => {
 
-  const [dentistas, setdentistas] = useState([]);
-
-  const getDentistas = async () => {
-    const res = await axios(`${apiBaseUrl}/dentista`)
-    setdentistas(res.data)
-  }
+  const { data, isLoading, error, shouldFetch } = useApi();
 
   useEffect(() => {
-    //Nesse useEffect, deverá ser obtido todos os dentistas da API
-    //Armazena-los em um estado para posteriormente fazer um map
-    //Usando o componente <Card />
-    console.log("<Home /> executou efeito colateral");
-    getDentistas();
-    return function unmount() {
-      console.log(console.log("<Home /> desmontou"));
+
+    const buscaDentistasApi = async () => {
+      await shouldFetch("dentista");
     }
+    buscaDentistasApi();
   }, []);
+
 
   return (
     <>
+
       <h1>Home</h1>
       <div className="card-grid container">
+
         {
 
-          dentistas.map(dentista => {
+          (data && !isLoading) ?
 
-            return (
-              dentista ?
-
+            data.map((card, index) => {
+              return (
                 <Card
-                  nomeDentista={dentista.nome}
-                  matricula={dentista.matricula}
-                />
+                  key={index}
+                  nomeDentista={card.nome}
+                  matricula={card.matricula}
+                /> 
+              )
+            })
 
-                : <h2>Carregando informações</h2>
-            )
-          })
+            : <h1>Carregando as informações...</h1>
         }
-      </div>
 
+      </div>
     </>
   );
 };
