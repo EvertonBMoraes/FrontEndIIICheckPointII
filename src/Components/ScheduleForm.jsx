@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ScheduleForm.module.css";
 import axios from 'axios';
 import apiBaseUrl from '../api';
@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const ScheduleForm = () => {
   //const params = useParams();
 
-  // const { data, shouldFetch } = useApi();
   const navigate = useNavigate();
   const [dentistas, setDentistas] = useState([]);
   const [pacientes, setPacientes] = useState([]);
@@ -15,7 +14,6 @@ const ScheduleForm = () => {
   const [dentistaSelecionado, setDentistaSelecionado] = useState();
   const [pacienteSelecionado, setPacienteSelecionado] = useState();
   const [dataSelecionada, setDataSelecionada] = useState();
-
 
   const getDentistas = async () => {
     const res = await axios.get(`${apiBaseUrl}/dentista`);
@@ -82,7 +80,7 @@ const ScheduleForm = () => {
     const response = await axios.post(`${apiBaseUrl}/consulta`, consulta, config);
     console.log(response);
 
-    if (response.status == 200) {
+    if (response.status === 200) {
       alert("Consulta gerada com sucesso")
       navigate("/home");
     } else {

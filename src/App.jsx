@@ -21,12 +21,14 @@ function App() {
     } else {
       setThemeIcon("☀");
     }
+    localStorage.setItem("icon", themeIcon)
   };
 
 
   const handleChangeTheme = () => {
     console.log("Filho disparou a função que troca o tema");
     theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
+    localStorage.setItem("theme", theme)
     handleChangeIcon();
   };
 
